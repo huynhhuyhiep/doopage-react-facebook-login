@@ -24,6 +24,7 @@ const Example = () => {
 
   return (
     <FacebookLogin
+      appId={'YOUR_FB_APP_ID'}
       callback={responseFacebook}
       fields="name,email,picture"
       scope="public_profile,email,pages_messaging_subscriptions"
