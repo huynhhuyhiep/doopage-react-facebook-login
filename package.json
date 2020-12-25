@@ -1,6 +1,6 @@
 {
   "name": "@doopage/react-facebook-login",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Support Login Facebook Component for ReactJS",
   "author": "Huynh Huy Hiep",
   "license": "MIT",
@@ -26,7 +26,8 @@
     "depcheck": "npx depcheck",
     "release": "standard-version && git push --follow-tags origin main",
     "prepublishOnly": "npm run lint && npm run release",
-    "lint": "eslint src/**/*.{tsx,ts} --fix"
+    "lint": "eslint src/**/*.{tsx,ts} --fix",
+    "publish-npm": "npm publish"
   },
   "peerDependencies": {
     "react": "^16.0.0"
