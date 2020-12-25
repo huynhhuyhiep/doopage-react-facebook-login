@@ -25,7 +25,7 @@
     "update": "npx npm-check --update",
     "depcheck": "npx depcheck",
     "release": "standard-version && git push --follow-tags origin main",
-    "prepublishOnly": "npm run lint && npm run release && npm run build",
+    "prepublishOnly": "npm run lint && npm run release",
     "lint": "eslint src/**/*.{tsx,ts} --fix"
   },
   "peerDependencies": {

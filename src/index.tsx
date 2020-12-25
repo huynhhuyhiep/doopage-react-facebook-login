@@ -12,10 +12,11 @@ const getParamsFromObject = (obj: any) => {
 }
 
 interface Props {
-  state?: string
+  appId?: string
+
   isDisabled?: boolean
   callback: (res: any) => void
-  appId?: string
+
   xfbml?: boolean
   cookie?: boolean
   authType?: string
@@ -30,6 +31,7 @@ interface Props {
   language?: string
   onClick: (e?: ChangeEvent) => void
   onFailure?: (res: any) => void
+  state?: string
 }
 
 const FacebookLogin: FC<Props> = (props) => {
