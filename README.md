@@ -15,8 +15,7 @@ npm install --save @doopage/react-facebook-login
 ```tsx
 import React, { Component } from 'react'
 
-import MyComponent from '@doopage/react-facebook-login'
-import '@doopage/react-facebook-login/dist/index.css'
+import FacebookLogin from '@doopage/react-facebook-login'
 
 class Example extends Component {
   render() {
@@ -27,4 +26,4 @@ class Example extends Component {
 
 ## License
 
-MIT © [Huynh Huy Hiep](https://github.com/Huynh Huy Hiep)
+MIT © [Huynh Huy Hiep](https://github.com/huynhhuyhiep)
