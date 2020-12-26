@@ -1,5 +1,4 @@
-// eslint-disable-next-line no-unused-vars
-import { ChangeEvent, FC, useEffect, useState } from 'react'
+import { FC, useEffect, useState } from 'react'
 import { isMobile } from 'react-device-detect'
 
 const getParamsFromObject = (obj: any) => {
@@ -29,7 +28,6 @@ interface Props {
   fields?: string
   version?: string
   language?: string
-  onClick: (e?: ChangeEvent) => void
   onFailure?: (res: any) => void
   state?: string
 }
@@ -83,7 +81,7 @@ const FacebookLogin: FC<Props> = (props) => {
         // @ts-ignore
         js.src = `https://connect.facebook.net/${language}/sdk.js`
         // @ts-ignore
-        js.parentNode.insertBefore(js, fjs)
+        fjs.parentNode.insertBefore(js, fjs)
       })(document, 'script', 'facebook-jssdk')
     }
   }, [])

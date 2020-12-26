@@ -64,7 +64,6 @@ const Example = () => {
 |    cookie    | |     boolean         |                  false                              |
 | redirectUri  | |     string          |               window.location.href  |
 |   language   | |     string          |                  en_US                              |
-|   onClick    | |    function        |                  Initial click on the component     |
 |   isMobile   | |    boolean         |                  detected via userAgent             |use **isMobile** of isreact-device-detect to detect|
 | disableMobileRedirect | |    boolean     |                        true                        | set to true for popup authentication on mobile devices |
 |   onFailure  | |    function        | optional function to separatere the failed init     |
