@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 import { FC, useEffect, useState } from 'react'
 import { isMobile } from 'react-device-detect'
 
@@ -47,12 +48,21 @@ const FacebookLogin: FC<Props> = (props) => {
     onFailure,
     callback: callbackFunc,
     language,
-    fields
+    fields,
+    version,
+    xfbml,
+    cookie
   } = props
   const [isSdkLoaded, setSdkLoaded] = useState(false)
+  console.log('FACEBOOK_APP_ID', process.env.REACT_APP_FACEBOOK_APP_ID)
 
   useEffect(() => {
-    const { appId, xfbml, cookie, version } = props
+    if (!appId) {
+      console.error(
+        'FacebookLogin need appId to init Facebook Sdk, see https://www.npmjs.com/package/@doopage/react-facebook-login Props for more detail'
+      )
+      return
+    }
 
     if (document.getElementById('facebook-jssdk')) {
       setSdkLoaded(true)
@@ -84,7 +94,7 @@ const FacebookLogin: FC<Props> = (props) => {
         fjs.parentNode.insertBefore(js, fjs)
       })(document, 'script', 'facebook-jssdk')
     }
-  }, [])
+  }, [appId])
 
   // @ts-ignore
   const checkLoginState = ({ authResponse, status }) => {
@@ -149,7 +159,7 @@ const FacebookLogin: FC<Props> = (props) => {
 }
 
 FacebookLogin.defaultProps = {
-  appId: process.env.FACEBOOK_APP_ID,
+  appId: process.env.REACT_APP_FACEBOOK_APP_ID,
   redirectUri: typeof window !== 'undefined' ? window.location.href : '/',
   scope: 'public_profile,email',
   returnScopes: true,
