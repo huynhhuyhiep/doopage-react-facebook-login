@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.6](https://github.com/huynhhuyhiep/doopage-react-facebook-login/compare/v0.0.5...v0.0.6) (2020-12-26)
+
+
+### Bug Fixes
+
+* Fix crash when init fb sdk ([98cad37](https://github.com/huynhhuyhiep/doopage-react-facebook-login/commit/98cad376557d5380422a1832827471540605d1ce))
+
 ### [0.0.5](https://github.com/huynhhuyhiep/doopage-react-facebook-login/compare/v0.0.4...v0.0.5) (2020-12-26)
 
 ### [0.0.4](https://github.com/huynhhuyhiep/doopage-react-facebook-login/compare/v0.0.3...v0.0.4) (2020-12-25)
