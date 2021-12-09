@@ -99,15 +99,19 @@ const FacebookLogin: FC<Props> = (props) => {
   // @ts-ignore
   const checkLoginState = ({ authResponse, status }) => {
     if (authResponse) {
-      // @ts-ignore
-      window.FB.api(
-        '/me',
-        {
-          locale: language,
-          fields: fields
-        },
-        (me: any) => callbackFunc({ ...me, ...authResponse })
-      )
+      try {
+        // @ts-ignore
+        window.FB.api(
+          '/me',
+          {
+            locale: language,
+            fields: fields
+          },
+          (me: any) => callbackFunc({ ...me, ...authResponse })
+        )
+      } catch (e) {
+        callbackFunc(authResponse)
+      }
     } else {
       if (onFailure) onFailure({ status })
       else callbackFunc({ status })
@@ -167,7 +171,7 @@ FacebookLogin.defaultProps = {
   cookie: false,
   authType: '',
   fields: 'name',
-  version: '9.0',
+  version: '12.0',
   disableMobileRedirect: true,
   isMobile: isMobile,
   state: 'facebookdirect',
